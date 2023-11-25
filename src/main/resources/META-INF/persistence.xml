@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence 
+    version="3.0" 
+    xmlns="https://jakarta.ee/xml/ns/persistence" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence 
+                        https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+    
+    <persistence-unit name="HibernateJpaPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>mx.com.iri.domain.Domicilio</class>
+        <class>mx.com.iri.domain.Contacto</class>
+        <class>mx.com.iri.domain.Curso</class>
+        <class>mx.com.iri.domain.Alumno</class>
+        <class>mx.com.iri.domain.Asignacion</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3308/sga?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true" />
+            <property name="jakarta.persistence.jdbc.user" value="root" />
+            <property name="jakarta.persistence.jdbc.password" value="admin" />
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="hibernate.show_sql" value="true"/>
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>-->
+<!--            <property name="eclipselink.logging.level.sql" value="FINE" />
+            <property name="eclipselink.loggin.parameters" value="true" />-->
+        </properties>
+    </persistence-unit>
+</persistence>
