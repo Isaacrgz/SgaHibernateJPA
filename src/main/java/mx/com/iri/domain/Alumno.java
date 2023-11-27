@@ -21,12 +21,14 @@ public class Alumno implements Serializable {
     
     //Se puede omitir JoinColumn si en ambas tablas tiene el mismo nombre, si no se especifica
     @JoinColumn(name = "id_domicilio", referencedColumnName = "id_domicilio")
-    @ManyToOne
+    // Se agrega (cascade = CascadeType.ALL) para hacer transiciones en cascada, @ManyToOne solo hace la relacion
+    @ManyToOne(cascade = CascadeType.ALL) 
     private Domicilio domicilio;
     
     //Se puede omitir JoinColumn si en ambas tablas tiene el mismo nombre, si no se especifica
     @JoinColumn(name = "id_contacto", referencedColumnName = "id_contacto")
-    @ManyToOne
+    // Se agrega (cascade = CascadeType.ALL) para hacer transiciones en cascada, @ManyToOne solo hace la relacion
+    @ManyToOne(cascade = CascadeType.ALL) 
     private Contacto contacto;
     
     //Mapeada por el atributo alumno del modelo Asignacion 

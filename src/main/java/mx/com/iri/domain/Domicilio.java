@@ -16,6 +16,8 @@ public class Domicilio implements Serializable {
     @Column(name = "no_calle")
     private String noCalle;
     
+    private String calle;
+    
     private String pais;
     
     public Domicilio() {
@@ -34,6 +36,14 @@ public class Domicilio implements Serializable {
         this.idDomicilio = idDomicilio;
     }
 
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+    
     public String getNoCalle() {
         return noCalle;
     }
@@ -52,7 +62,7 @@ public class Domicilio implements Serializable {
 
     @Override
     public String toString() {
-        return "Domicilio{" + "idDomicilio=" + idDomicilio + ", noCalle=" + noCalle + ", pais=" + pais + '}';
+        return "Domicilio{" + "idDomicilio=" + idDomicilio + ", noCalle=" + noCalle + ", calle=" + calle + ", pais=" + pais + '}';
     }
 
     @Override
